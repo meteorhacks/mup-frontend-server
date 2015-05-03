@@ -9,7 +9,8 @@ NGINX_USER=nginx
 useradd $NGINX_USER || :
 
 # install dependencies
-apt-get -y install libpcre3-dev libssl-dev build-essential
+apt-get update
+apt-get -y install libpcre3-dev libssl-dev build-essential wget
 
 # start building process
 
@@ -32,5 +33,5 @@ cd nginx-$NGINX_VERSION
 make install
 
 # remove build specific libraries
-apt-get -y remove libpcre3-dev libssl-dev build-essential
+apt-get -y remove build-essential wget
 apt-get -y autoremove

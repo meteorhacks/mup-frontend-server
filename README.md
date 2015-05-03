@@ -14,7 +14,7 @@ docker run \
   --volume=/opt/<appname>/config/private.key:/private.key \
   --link=<appname>:backend \
   --publish=443:443 \
-  meteorhacks:mup-frontend-server /start.sh
+  meteorhacks/mup-frontend-server /start.sh
 ~~~
 
 As you've noticed, we need to add two volumes for the `bundle.crt` and `private.key`.
@@ -43,7 +43,7 @@ You can verify SSL configuration like this:
 docker run \
   --volume=/opt/<appname>/config/bundle.crt:/bundle.crt \
   --volume=/opt/<appname>/config/private.key:/private.key \
-  meteorhacks:mup-frontend-server /verify.sh
+  meteorhacks/mup-frontend-server /verify.sh
 ~~~
 
 ### Why Nginx?

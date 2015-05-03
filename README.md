@@ -19,7 +19,7 @@ docker run \
 
 As you've noticed, we need to add two volumes for the `bundle.crt` and `private.key`.
 
-**bundle.crt**
+#### bundle.crt
 
 This is bundle containing all of your certficated including the provided CA certificates. To create this file you need to concatnate all ceritifcates starting from your domain certificate to top level CA certificates. Here's an example:
 
@@ -31,7 +31,7 @@ cat \
     AddTrustExternalCARoot.crt > bundle.crt
 ~~~
 
-**private.key**
+#### private.key
 
 This is the private key you've used to generate the above certficate.
 

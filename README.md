@@ -1,6 +1,6 @@
 # Frontend Server for Meteor Up
 
-This is the front end server used by Meteor Up infront of meteor apps. This is a the latest version of nginx bundled as a docker image. It is configured to run with every app deployed with Meteor Up. But, this is not a Load Balancer.
+This is the front end server used by Meteor Up in front of meteor apps. This is the latest version of nginx bundled as a docker image. It is configured to run with every app deployed with Meteor Up. But, this is not a Load Balancer.
 
 ## For SSL Support
 
@@ -21,7 +21,7 @@ As you've noticed, we need to add two volumes for the `bundle.crt` and `private.
 
 #### bundle.crt
 
-This is bundle containing all of your certficated including the provided CA certificates. To create this file you need to concatnate all ceritifcates starting from your domain certificate to top level CA certificates. Here's an example:
+This is a bundle containing all of your certificates including the provided CA certificates. To create this file you need to concatenate all certificates starting from your domain certificate to the top level CA certificates. Here's an example:
 
 ~~~shell
 cat \
@@ -35,9 +35,9 @@ cat \
 
 This is the private key you've used to generate the above certficate.
 
-### Verfiy Configuration
+### Verify Configuration
 
-You can verify SSL configuration like this:
+You can verify the SSL configuration like this:
 
 ~~~shell
 docker run \
@@ -48,9 +48,9 @@ docker run \
 
 ### Why Nginx?
 
-It's a question why we've choosen nginx for the SSL termination. We could've used something like `stud` of `bud`.
+There's the question why we've chosen nginx for the SSL termination. We could've used something like `stud` or `bud`.
 
-We need to get correct IP Address of the real connection. That's usable for some apps and for Sikka. Normally SSL terminators like `stud` and `bud` does not support it for support it partially.
+We need to get the correct IP address of the real connection, which is required for certain apps such as Sikka. Normally SSL terminators like `stud` and `bud` do not support this or support it only partially.
 
 ## For Static File Caching
 

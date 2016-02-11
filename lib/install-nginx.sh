@@ -10,7 +10,7 @@ useradd $NGINX_USER || :
 
 # install dependencies
 apt-get update
-apt-get -y install libpcre3-dev libssl-dev build-essential wget
+apt-get -y install libpcre3-dev libssl-dev openssl build-essential wget
 
 # start building process
 
@@ -35,3 +35,6 @@ make install
 # remove build specific libraries
 apt-get -y remove build-essential wget
 apt-get -y autoremove
+
+# generate new Diffie-Hellman group
+openssl dhparam -out /dhparams.pem 2048
